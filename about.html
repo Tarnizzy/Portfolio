@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5a4d0ead8c.js" crossorigin="anonymous"></script>
+    <script defer src="https://friconix.com/cdn/friconix-0.2145.js"> </script>
+    <title>About</title>
+</head>
+<body>
+    <div class="mobile-left-menu" id="mobile-left-menu">
+        <div class="left-menu-top">
+            <div id="close-icon" ondblclick="closeMenu(); return false" class="close-icon" onclick="closeMenu(); return false">
+                <div>&#x2715; Close</div>  
+            </div>
+            <i class="fi-xtsuxl-bulb-thin"></i>
+        </div>
+
+        <div class="profile-info-container">
+            <div class="mobile-menu-profile">
+            </div>
+           <h3>Hudson Obai</h3>
+        </div>
+
+        <div class="mobile-menu-items-container">
+                <li>
+                    <a href="#"><i class="fi-xtluxl-home-thin"></i><h3>Home</h3></a></li>
+                
+                <li> <a href="about.html" target="_blank">
+                    <i class="fi-xtluxl-user-thin"></i><h3>About</h3></a>
+                </li>
+                <li><i class="fi-xtluxl-tools-thin"></i><h3>Services</h3></li>
+                <li><i class="fi-xtluxl-folder-thin"></i><h3>Projects</h3></li>
+                <li><i class="fi-xtluxl-book-title-thin"></i><h3>Blog</h3></li>  
+        </div>   
+
+        <div class="mobile-menu-social-icons">
+            <i class="fi-xnsuxl-twitter"></i>
+            <i class="fi-xnsuxl-twitter"></i>
+            <i class="fi-snsuxl-linkedin"></i>
+            <i class="fi-xnsuxl-github"></i>
+        </div>
+
+    </div>
+    <section id="mobile-main"
+    class="mobible-main">
+        some content here
+    </section>
+
+    <nav>
+        <div  id= "navigation-container" class="navigation-container">
+         <div   class="mobile-nav-bottom-menu">
+             <i class="fi-xtluxl-home-thin"></i>
+             Home
+         </div>
+         <div class="mobile-nav-bottom-menu">
+             <i class="fi-xtluxl-user-thin"></i>
+             </i>
+             About
+         </div>
+         <div class="mobile-nav-bottom-menu"><i class="fi-xtluxl-computer-desktop-thin"></i>
+             Projects
+         </div>
+         <div class="mobile-nav-bottom-menu">
+            <a href="#" onclick="openSideMenu(); return false;"> <i id= "burger-opener" class="fi-xtluxl-three-bars-thin"></i></a>
+         Menu</div>
+         
+        </div>
+     </nav>
+</body>
+
+<script>
+
+    const currentLocation = location.href;
+    const menuItem = document.querySelectorAll('a');
+    for(let i=0; i<menuItem.length; i++){
+        if(menuItem[i].href===currentLocation){
+            menuItem[i].className= "active";
+        }
+    }
+    
+    function openSideMenu() {
+        document.getElementById("mobile-main").style.marginLeft = "250px";
+        document.getElementById("mobile-main").style.position= "fixed";
+        
+        document.getElementById("navigation-container").style.display = "none";
+        document.getElementById("mobile-left-menu").style.left = "0px";
+    }
+ 
+    function closeMenu(){
+     document.getElementById("mobile-main").style.position="absolute";
+     document.getElementById("mobile-main").style.marginLeft = "0px";
+     document.getElementById("navigation-container").style.marginLeft = "24px";
+     document.getElementById("mobile-left-menu").style.left = "-250px";
+     document.getElementById("navigation-container").style.display = "flex";
+    }
+ 
+ </script>
+</html>
